@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "864463856306",
+    "project_id": "foodmoodbd-f0d3f",
+    "storage_bucket": "foodmoodbd-f0d3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864463856306:android:fa158c5ab3464299639fab",
+        "android_client_info": {
+          "package_name": "com.foodmoodbd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864463856306-ei6pojfkosqshms2m06oan1av0jpnel4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.foodmoodbd",
+            "certificate_hash": "0653e7ccbb113a253754f8a1cb23f291bfc40d74"
+          }
+        },
+        {
+          "client_id": "864463856306-h6f79eg2elu1q36u98rp5feltpgk6h54.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpJN-wWL76JSm_LzyXl7B7izzJpuc0Lhc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864463856306-h6f79eg2elu1q36u98rp5feltpgk6h54.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
