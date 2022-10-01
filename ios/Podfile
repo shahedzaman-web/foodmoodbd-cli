@@ -3,10 +3,17 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '13.0'
 install! 'cocoapods', :deterministic_uuids => false
-
+$RNFirebaseAsStaticFramework = true
 
 target 'foodmoodbd' do
   config = use_native_modules!
+  
+  
+  use_frameworks!
+
+  
+
+
 
   # Flags change depending on the env values.
   flags = get_default_flags()
