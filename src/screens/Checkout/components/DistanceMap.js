@@ -49,11 +49,11 @@ export default function DistanceMap({coordinates, setCalculateDistance}) {
           strokeWidth={3}
           strokeColor="hotpink"
           optimizeWaypoints={true}
-          onStart={params => {
-            console.log(
-              `Started routing between "${params.origin}" and "${params.destination}"`,
-            );
-          }}
+          // onStart={params => {
+          //   console.log(
+          //     `Started routing between "${params.origin}" and "${params.destination}"`,
+          //   );
+          // }}
           onReady={result => {
             setCalculateDistance(result.distance);
             mapRef.current.fitToCoordinates(result.coordinates, {

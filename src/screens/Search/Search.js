@@ -50,7 +50,7 @@ export default function Search({navigation}) {
   const [detailsLocation, setDetailsLocation] = React.useState({});
   const [address, setAddress] = React.useState('');
   const [position, setPosition] = React.useState(null);
-  console.log({position});
+
   const getCurrentPosition = () => {
     Geolocation.getCurrentPosition(
       pos => {
@@ -107,7 +107,7 @@ export default function Search({navigation}) {
     try {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
-      console.log({lat, lon});
+
       setRegion({
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,

@@ -21,7 +21,7 @@ import {cartSlice} from './slices/cartSlice';
 import {welcomeSlice} from './slices/welcomeSlice';
 
 const persistConfig = {
-  key: '@testV9',
+  key: '@testV10',
   version: 1,
   storage: AsyncStorage,
   whitelist: [

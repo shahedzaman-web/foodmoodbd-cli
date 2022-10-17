@@ -34,7 +34,6 @@ export default function GoogleLogin({expoPushToken}) {
       }
 
       const userInfo = await GoogleSignin.signIn();
-      console.log('User info', userInfo);
 
       const sendData = {
         provider: 'Google',
@@ -45,7 +44,7 @@ export default function GoogleLogin({expoPushToken}) {
         token: expoPushToken,
       };
       const {data, error} = await socialLogin(sendData);
-      console.log({data, error});
+
       if (data?.login_id !== undefined) {
         dispatch(provider('google'));
         navigation.replace('App');

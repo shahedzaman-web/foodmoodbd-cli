@@ -10,10 +10,12 @@ import LoadingScreen from './src/screens/LoadingScreen/LoadingScreen';
 import {Provider as PaperProvider} from 'react-native-paper';
 import Toast from 'react-native-toast-message';
 import {StatusBar} from 'react-native';
+import onNotificationOpened from './src/utils/onNotificationOpenedFnc';
 
 const App = () => {
   React.useEffect(() => {
     SplashScreen.hide();
+    onNotificationOpened()
   }, []);
 
   return (

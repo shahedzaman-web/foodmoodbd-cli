@@ -59,44 +59,48 @@ export default function Welcome({navigation}) {
   };
 
   const hasLocationPermission = async () => {
-    if (Platform.OS === 'ios') {
-      const hasPermission = await hasPermissionIOS();
-      return hasPermission;
-    }
+    try {
+      if (Platform.OS === 'ios') {
+        const hasPermission = await hasPermissionIOS();
+        return hasPermission;
+      }
 
-    if (Platform.OS === 'android' && Platform.Version < 23) {
-      return true;
-    }
+      if (Platform.OS === 'android' && Platform.Version < 23) {
+        return true;
+      }
 
-    const hasPermission = await PermissionsAndroid.check(
-      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-    );
-
-    if (hasPermission) {
-      return true;
-    }
-
-    const status = await PermissionsAndroid.request(
-      PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-    );
-
-    if (status === PermissionsAndroid.RESULTS.GRANTED) {
-      return true;
-    }
-
-    if (status === PermissionsAndroid.RESULTS.DENIED) {
-      ToastAndroid.show(
-        'Location permission denied by user.',
-        ToastAndroid.LONG,
+      const hasPermission = await PermissionsAndroid.check(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
       );
-    } else if (status === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN) {
-      ToastAndroid.show(
-        'Location permission revoked by user.',
-        ToastAndroid.LONG,
-      );
-    }
 
-    return false;
+      if (hasPermission) {
+        return true;
+      }
+
+      const status = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      );
+
+      if (status === PermissionsAndroid.RESULTS.GRANTED) {
+        return true;
+      }
+
+      if (status === PermissionsAndroid.RESULTS.DENIED) {
+        ToastAndroid.show(
+          'Location permission denied by user.',
+          ToastAndroid.LONG,
+        );
+      } else if (status === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN) {
+        ToastAndroid.show(
+          'Location permission revoked by user.',
+          ToastAndroid.LONG,
+        );
+      }
+
+      return false;
+    } catch (e) {
+      alert(e.message);
+    }
   };
 
   const getCurrentPosition = React.useCallback(async () => {
@@ -110,7 +114,7 @@ export default function Welcome({navigation}) {
       async pos => {
         setPosition(pos);
         const {latitude, longitude} = pos.coords;
-        console.log({position});
+     
         const response = await Geocoder.from({latitude, longitude});
         let formattedAddress = [];
         response.results.forEach(element => {
@@ -153,14 +157,14 @@ export default function Welcome({navigation}) {
         };
         dispatch(storeLocation(storedData));
         dispatch(setScreenViewed());
-        console.log({storedData});
+     
         navigation.navigate('Root');
         setLoading(false);
       },
       error => alert('GetCurrentPosition Error', JSON.stringify(error)),
     );
-  }, [position]);
-  console.log({position});
+  }, [dispatch, hasLocationPermission, navigation]);
+
   const currentLocation = async () => {
     try {
       setLoading(true);

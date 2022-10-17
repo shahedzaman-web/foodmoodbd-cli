@@ -1,7 +1,13 @@
 import React from 'react';
-import {View, TouchableOpacity, Alert} from 'react-native';
-import Geolocation from '@react-native-community/geolocation';
-
+import {
+  View,
+  TouchableOpacity,
+  Alert,
+  ToastAndroid,
+  PermissionsAndroid,
+  Platform,
+} from 'react-native';
+import Geolocation from 'react-native-geolocation-service';
 import Geocoder from 'react-native-geocoding';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
@@ -29,14 +35,98 @@ export default function Header() {
 
   const [sendUserInfo] = useSendUserInfoMutation();
   const [position, setPosition] = React.useState(null);
-  const getCurrentPosition = () => {
-    Geolocation.getCurrentPosition(
-      pos => {
-        setPosition(pos);
-      },
-      error => Alert.alert('GetCurrentPosition Error', JSON.stringify(error)),
-      {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
-    );
+  const hasPermissionIOS = async () => {
+    const openSetting = () => {
+      Linking.openSettings().catch(() => {
+        Alert.alert('Unable to open settings');
+      });
+    };
+    const status = await Geolocation.requestAuthorization('whenInUse');
+
+    if (status === 'granted') {
+      return true;
+    }
+
+    if (status === 'denied') {
+      Alert.alert('Location permission denied');
+    }
+
+    if (status === 'disabled') {
+      Alert.alert(
+        `Turn on Location Services to allow "${config.displayName}" to determine your location.`,
+        '',
+        [
+          {text: 'Go to Settings', onPress: openSetting},
+          {text: "Don't Use Location", onPress: () => {}},
+        ],
+      );
+    }
+
+    return false;
+  };
+
+  const hasLocationPermission = async () => {
+    try {
+      if (Platform.OS === 'ios') {
+        const hasPermission = await hasPermissionIOS();
+        return hasPermission;
+      }
+
+      if (Platform.OS === 'android' && Platform.Version < 23) {
+        return true;
+      }
+
+      const hasPermission = await PermissionsAndroid.check(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      );
+
+      if (hasPermission) {
+        return true;
+      }
+
+      const status = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+      );
+
+      if (status === PermissionsAndroid.RESULTS.GRANTED) {
+        return true;
+      }
+
+      if (status === PermissionsAndroid.RESULTS.DENIED) {
+        ToastAndroid.show(
+          'Location permission denied by user.',
+          ToastAndroid.LONG,
+        );
+      } else if (status === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN) {
+        ToastAndroid.show(
+          'Location permission revoked by user.',
+          ToastAndroid.LONG,
+        );
+      }
+
+      return false;
+    } catch (e) {
+      alert(e.message);
+    }
+  };
+  const getCurrentPosition = async () => {
+    try {
+      const hasPermission = await hasLocationPermission();
+
+      if (!hasPermission) {
+        return;
+      }
+
+         Geolocation.getCurrentPosition(
+        pos => {
+          setPosition(pos);
+        },
+        error => Alert.alert('GetCurrentPosition Error', JSON.stringify(error)),
+        {enableHighAccuracy: true, timeout: 15000, maximumAge: 10000},
+      );
+    } catch (e) {
+      alert(e.message);
+    }
   };
 
   React.useEffect(() => {
@@ -66,8 +156,8 @@ export default function Header() {
           });
           let city, state, country, premise, route;
 
-          response.results.forEach(element => {
-            element.address_components.forEach(element => {
+          response.results.forEach(elements => {
+            elements.address_components.forEach(element => {
               if (element.types[0] === 'locality') {
                 city = element.long_name;
               }

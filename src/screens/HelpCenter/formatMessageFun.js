@@ -1,11 +1,13 @@
-const formatMessageFun = (data) => {
+const formatMessageFun = data => {
   let text, image;
   const message = Object.values(data.messages);
 
   let formattedMessage = [];
-  message.map((x, index) => { 
-    
-    if (x.message.includes("https://www.foodmoodbd.com/uploads/attachment") || x.message.includes("https://foodmoodbd.com/uploads/attachment" )) {
+  message.map((x, index) => {
+    if (
+      x.message.includes('https://www.foodmoodbd.com/uploads/attachment') ||
+      x.message.includes('https://foodmoodbd.com/uploads/attachment')
+    ) {
       let message = x.message;
       let position = message.split("src='")[1];
       let position2 = position.split("'")[0];
@@ -23,7 +25,7 @@ const formatMessageFun = (data) => {
       image: image,
       createdAt: x.created_at,
       user: {
-        _id: x.sender.name === "support" ? 2 : 1,
+        _id: x.sender.name === 'support' ? 2 : 1,
         name: x.sender.name,
         avatar: x.sender.avatar,
       },

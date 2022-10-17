@@ -10,7 +10,7 @@ const requestUserPermission = async () => {
     if (enabled) {
       const fcmToken = await messaging().getToken();
       if (fcmToken) {
-        console.log("fcmToken===============>",fcmToken);
+
         return fcmToken;
       } else {
         return null;

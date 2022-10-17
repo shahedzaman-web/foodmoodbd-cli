@@ -143,7 +143,7 @@ const HelpCenter = ({navigation}) => {
         height: 400,
         cropping: true,
       });
-      console.log({image});
+   
       if (!image.cancelled && id !== 0) {
         let sendPhoto = {
           name: 'image',
@@ -238,7 +238,7 @@ const HelpCenter = ({navigation}) => {
 
           const payload = {user_id: id, message: messages[0].text};
 
-          const {data, error} = await sendMessage(payload);
+          const {data} = await sendMessage(payload);
 
           // console.log({
           //   data,

@@ -18,13 +18,13 @@ export default function Notification({navigation, route}) {
   const {data, isFetching} = useAppNotificationQuery();
 
   const {newNotification} = route?.params;
-  console.log({newNotification});
+
   const [viewAllNotification, setViewAllNotification] = React.useState(false);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     dispatch(notificationViewed());
-  }, []);
+  }, [dispatch]);
 
   return (
     <View style={styles.container}>

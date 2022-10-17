@@ -193,7 +193,6 @@ export default function DrawerContain({navigation}) {
                   size={20}
                   color="#666"
                 />
-
                 <FlatText
                   text={t('privacyPolicy')}
                   font="q_regular"
@@ -214,7 +213,6 @@ export default function DrawerContain({navigation}) {
                   size={20}
                   color="#666"
                 />
-
                 <FlatText
                   text={t('termsAndConditions')}
                   font="q_regular"

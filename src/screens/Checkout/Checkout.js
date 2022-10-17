@@ -106,7 +106,7 @@ export default function Checkout({navigation}) {
     calculateDistance,
     coordinates,
   ]);
-  console.log('termsAndCondition', termsAndCondition);
+
   const handleApplyCoupon = React.useCallback(async () => {
     if (couponCode === '') {
       Toast.show({
@@ -188,19 +188,19 @@ export default function Checkout({navigation}) {
               username: config.spayUser,
               password: config.spayPassword,
             };
-            const response = await axios.post(
+            const response2 = await axios.post(
               config.spayBaseUrl + '/api/get_token',
               data,
             );
-            console.log({response});
-            if (response.data.message === 'Ok') {
+
+            if (response2.data.message === 'Ok') {
               let amount = Math.round(
                 total -
                   couponDiscount +
                   deliveryFee +
                   total * taxPercentage?.data?.tax * 0.01,
               );
-              let token = response.data.token;
+              let token = response2.data.token;
               const formdata = new FormData();
               formdata.append('prefix', 'FMB');
               formdata.append('token', token);

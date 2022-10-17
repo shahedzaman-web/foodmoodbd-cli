@@ -42,7 +42,7 @@ export default function FacebookLogin({expoPushToken}) {
 
       // Sign-in the user with the credential
       const receiveData = await auth().signInWithCredential(facebookCredential);
-      console.log('receiveData', JSON.stringify(receiveData));
+
       const sendData = {
         provider: 'facebook',
         provider_user_id: receiveData.user.uid,
@@ -51,7 +51,7 @@ export default function FacebookLogin({expoPushToken}) {
         avatar: receiveData.additionalUserInfo.profile.picture.data.url,
         token: expoPushToken,
       };
-      console.log('sendData', sendData);
+
       const {data, error} = await socialLogin(sendData);
 
       if (data?.token !== undefined) {

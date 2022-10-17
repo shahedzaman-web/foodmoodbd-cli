@@ -18,10 +18,10 @@ export default function Home() {
   const getAreaId = useGetAreaIdQuery(city);
 
   const areaId = useSelector(state => state.areaId?.areaId);
-  console.log('areaId================>', getAreaId);
+
   const {data, isFetching, refetch, error} =
     useGetRestaurantsByAreaIdQuery(areaId);
-  console.log('error===============>', data, error);
+
   const onRefresh = () => {
     refetch();
   };

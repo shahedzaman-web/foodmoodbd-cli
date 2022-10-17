@@ -67,7 +67,7 @@ export default function Details({navigation, route}) {
       let existingItem = cartData.cart.find(
         x => x.title === selectedItem.title,
       );
-      console.log({existingItem});
+
       if (existingItem !== undefined) {
         setProductQuantity(existingItem?.quantity);
       } else {

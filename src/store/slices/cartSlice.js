@@ -26,10 +26,7 @@ export const cartSlice = createSlice({
           state.cart.push(addOnes);
         } else if (state.restaurantId === id) {
           const existingItem = state.cart.find((x) => x.title === item.title);
-          console.log(
-            "existingItem==========================================>",
-            existingItem
-          );
+   
           const existingAddOnes = state.cart.find(
             (x) => x.title === addOnes.title
           );
@@ -72,7 +69,7 @@ export const cartSlice = createSlice({
       }
     },
     addOneItem: (state, { payload }) => {
-      console.log({ payload });
+
       const { id, title, price, preview, quantity } = payload;
       const itemTitle = title;
       if (state.cart.length === 0) {
