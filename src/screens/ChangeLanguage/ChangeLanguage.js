@@ -23,8 +23,8 @@ export default function ChangeLanguage({navigation}) {
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           style={styles.backButton}>
-          <Ionicons name="arrow-back-outline" size={24} color="#333" />
-          <FlatText text={t('back')} size={20} font="q_bold" color="#333" />
+          <Ionicons name="arrow-back-outline" size={24} color="#333333" />
+          <FlatText text={t('back')} size={20} font="q_bold" color="#333333" />
         </TouchableOpacity>
       </View>
       <View style={styles.card}>
@@ -33,7 +33,7 @@ export default function ChangeLanguage({navigation}) {
             <FlatText
               text={t('changeLanguage')}
               font="extrabold"
-              color="#333"
+              color="#333333"
               size={24}
               textalign="center"
             />
@@ -43,13 +43,13 @@ export default function ChangeLanguage({navigation}) {
             <FlatText
               text={t('languageChangeQuestion')}
               font="semibold"
-              color="#333"
+              color="#333333"
               size={16}
               textalign="center"
             />
             <View style={styles.gap} />
             <View style={styles.row}>
-              <FlatText text="English" font="semibold" color="#333" size={16} />
+              <FlatText text="English" font="semibold" color="#333333" size={16} />
               <RadioButton
                 color="#C01C27"
                 uncheckedColor="#333"
@@ -59,7 +59,7 @@ export default function ChangeLanguage({navigation}) {
               />
             </View>
             <View style={styles.row}>
-              <FlatText text="বাংলা" font="semibold" color="#333" size={16} />
+              <FlatText text="বাংলা" font="semibold" color="#333333" size={16} />
               <RadioButton
                 color="#C01C27"
                 uncheckedColor="#333"

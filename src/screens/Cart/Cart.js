@@ -29,6 +29,7 @@ export default function Cart({navigation}) {
         <Header />
         <ScrollView style={styles.scrollHeight}>
           {cart.map((item, i) => {
+           
             return (
               <View style={styles.singleCartItem} key={i}>
                 <Image
@@ -36,26 +37,32 @@ export default function Cart({navigation}) {
                   source={
                     item.preview === 'addOne'
                       ? require('../../../assets/addon.png')
-                      : {uri: 'http:' + item?.preview}
+                      : {uri: config.https + item?.preview}
                   }
                 />
                 <View style={styles.widthSection}>
                   <View style={styles.cartRightSection}>
-                    <FlatText text={item.title} font="q_semibold" size={18} />
+                    <FlatText
+                      text={item.title}
+                      font="q_regular"
+                      size={18}
+                      color="#333333"
+                    />
                     <FlatText
                       text={
                         config.CURRENCY_CODE + ' ' + item.price * item.quantity
                       }
-                      font="q_semibold"
+                      font="q_regular"
                       size={18}
+                      color="#333333"
                     />
                   </View>
                   <View style={styles.cartRightSection}>
                     <FlatText
                       text={config.CURRENCY_CODE + ' ' + item.price}
-                      font="q_semibold"
+                      font="q_regular"
                       size={17}
-                      color="#666"
+                      color="#333333"
                     />
                     <View style={styles.qualityCart}>
                       {item.quantity == 1 ? (
@@ -81,7 +88,7 @@ export default function Cart({navigation}) {
                         text={' ' + item.quantity + ' '}
                         font="q_semibold"
                         size={19}
-                        color="#666"
+                        color="#333333"
                       />
                       <TouchableOpacity
                         onPress={() => dispatch(addOneItem(item))}>
@@ -117,9 +124,10 @@ export default function Cart({navigation}) {
       <View style={styles.flex}>
         <Header />
         <View style={styles.mainContainer}>
-          <Image 
-          style={styles.cartImg}
-          source={require("./../../../assets/empty-cart.gif")} />
+          <Image
+            style={styles.cartImg}
+            source={require('./../../../assets/empty-cart.gif')}
+          />
           <FlatText text={t('empty')} font="q_regular" size={22} />
         </View>
       </View>

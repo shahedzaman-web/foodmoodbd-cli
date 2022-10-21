@@ -1,8 +1,8 @@
-import { FlatList, View } from "react-native";
-import React from "react";
-import styles from "./../styles";
-import RenderFoodItem from "./RenderFoodItem";
-import FlatText from "../../../components/FlatText";
+import {FlatList, View} from 'react-native';
+import React from 'react';
+import styles from './../styles';
+import RenderFoodItem from './RenderFoodItem';
+import FlatText from '../../../components/FlatText';
 
 export default function RenderProducts({
   item,
@@ -31,7 +31,7 @@ export default function RenderProducts({
           <FlatList
             data={item.products}
             numColumns={2}
-            renderItem={({ item }) => (
+            renderItem={({item}) => (
               <RenderFoodItem
                 open={open}
                 restaurantId={restaurantId}
@@ -40,7 +40,7 @@ export default function RenderProducts({
                 setSelectedItem={setSelectedItem}
               />
             )}
-            keyExtractor={(index) => index.toString()}
+            keyExtractor={index => index.toString()}
           />
         </View>
       </View>

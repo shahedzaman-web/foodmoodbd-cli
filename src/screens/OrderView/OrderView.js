@@ -85,7 +85,7 @@ export default function OrderView({route}) {
       <View style={styles.flex}>
         <Header />
         <View style={styles.mainContainer}>
-          <ActivityIndicator size="large" color="#333" />
+          <ActivityIndicator size="large" color="#333333" />
         </View>
       </View>
     );

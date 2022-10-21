@@ -17,7 +17,7 @@ export default function RenderFoodItem({item, open, setSelectedItem}) {
         <View>
           <Image
             style={styles.foodImage}
-            source={{uri: 'http:' + item.preview.content}}
+            source={{uri: 'https:' + item.preview.content}}
           />
           <View style={styles.foodTitle}>
             <FlatText
@@ -32,7 +32,7 @@ export default function RenderFoodItem({item, open, setSelectedItem}) {
               <FlatText
                 font="q_semibold"
                 size={16}
-                color="#333"
+                color="#333333"
                 text={config.CURRENCY_CODE + ' ' + item.price.price}
               />
             </View>

@@ -209,7 +209,7 @@ const HelpCenter = ({navigation}) => {
   };
 
   const scrollToBottomComponent = () => {
-    return <FontAwesome name="angle-double-down" size={22} color="#333" />;
+    return <FontAwesome name="angle-double-down" size={22} color="#333333" />;
   };
 
   const RenderActions = (props, id) => {
@@ -294,7 +294,7 @@ const HelpCenter = ({navigation}) => {
               text={t('deleteConversation')}
               font="bold"
               size={18}
-              color="#333"
+              color="#333333"
               textalign={'center'}
             />
             <View style={styles.btnContainer}>
@@ -324,7 +324,7 @@ const HelpCenter = ({navigation}) => {
           <TouchableOpacity
             style={styles.mr12}
             onPress={() => navigation.goBack()}>
-            <Ionicons name="arrow-back-sharp" size={24} color="#333" />
+            <Ionicons name="arrow-back-sharp" size={24} color="#333333" />
           </TouchableOpacity>
           <Avatar.Image
             style={styles.mr12}
@@ -335,7 +335,7 @@ const HelpCenter = ({navigation}) => {
             text={t('chatWith')}
             font="q_semibold"
             size={18}
-            color="#333"
+            color="#333333"
           />
         </View>
         <TouchableOpacity onPress={() => setIsModalVisible(true)}>

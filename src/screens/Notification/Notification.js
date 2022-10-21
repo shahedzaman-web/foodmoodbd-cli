@@ -36,7 +36,7 @@ export default function Notification({navigation, route}) {
       </View>
       <ScrollView>
         <View>
-          {newNotification.length > 0 && !viewAllNotification && (
+          {newNotification?.length > 0 && !viewAllNotification && (
             <FlatList
               data={newNotification}
               renderItem={({item}) => <NotificationCard item={item} />}

@@ -1,6 +1,7 @@
 const config = {
   displayName:"foodmoodbd",
   base_url: "https://foodmoodbd.com/api",
+  https: "https:",
   spayBaseUrl: "https://engine.shurjopayment.com",
   GOOGLE_MAP_API_KEY: "AIzaSyA3VH54vn90zKlLNJzifoKUHv8RBlgDKxc",
   GOOGLE_MAP_API_KEY_Geocoder: "AIzaSyA3VH54vn90zKlLNJzifoKUHv8RBlgDKxc",

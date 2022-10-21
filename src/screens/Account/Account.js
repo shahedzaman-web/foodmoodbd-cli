@@ -50,7 +50,12 @@ export default function Account({navigation}) {
             }}
           />
           <View style={styles.username}>
-            <FlatText text={userInfo.name} font="q_regular" size={22} />
+            <FlatText
+              text={userInfo.name}
+              font="q_regular"
+              size={22}
+              color="#333333"
+            />
           </View>
           <View style={styles.singleList}>
             <TouchableOpacity
@@ -65,11 +70,16 @@ export default function Account({navigation}) {
                     style={styles.icon}
                     name="home"
                     size={20}
-                    color="#666"
+                    color="#333333"
                   />
-                  <FlatText text=" Homepage" font="q_regular" size={18} />
+                  <FlatText
+                    text=" Homepage"
+                    font="q_regular"
+                    size={18}
+                    color="#333333"
+                  />
                 </View>
-                <Ionicons name="ios-arrow-forward" size={24} color="#666" />
+                <Ionicons name="ios-arrow-forward" size={24} color="#333333" />
               </View>
             </TouchableOpacity>
           </View>
@@ -81,11 +91,16 @@ export default function Account({navigation}) {
                     style={styles.icon}
                     name="list-unordered"
                     size={20}
-                    color="#666"
+                    color="#333333"
                   />
-                  <FlatText text=" All Orders" font="q_regular" size={18} />
+                  <FlatText
+                    text=" All Orders"
+                    font="q_regular"
+                    size={18}
+                    color="#333333"
+                  />
                 </View>
-                <Ionicons name="ios-arrow-forward" size={24} color="#666" />
+                <Ionicons name="ios-arrow-forward" size={24} color="#333333" />
               </View>
             </TouchableOpacity>
           </View>
@@ -97,18 +112,23 @@ export default function Account({navigation}) {
                     style={styles.icon}
                     name="settings"
                     size={20}
-                    color="#666"
+                    color="#333333"
                   />
-                  <FlatText text="Settings" font="q_regular" size={18} />
+                  <FlatText
+                    text="Settings"
+                    font="q_regular"
+                    size={18}
+                    color="#333333"
+                  />
                 </View>
-                <Ionicons name="ios-arrow-forward" size={24} color="#666" />
+                <Ionicons name="ios-arrow-forward" size={24} color="#333333" />
               </View>
             </TouchableOpacity>
           </View>
           <View style={styles.singleList}>
             <TouchableOpacity onPress={logout}>
               {isLoading ? (
-                <ActivityIndicator size="small" color="#666" />
+                <ActivityIndicator size="small" color="#333333" />
               ) : (
                 <View style={styles.flexDirection}>
                   <View style={styles.flexContain}>
@@ -116,12 +136,17 @@ export default function Account({navigation}) {
                       style={styles.icon}
                       name="logout"
                       size={20}
-                      color="#666"
+                      color="#333333"
                     />
-                    <FlatText text=" Logout" font="q_regular" size={18} />
+                    <FlatText
+                      text=" Logout"
+                      font="q_regular"
+                      size={18}
+                      color="#333333"
+                    />
                   </View>
 
-                  <Ionicons name="ios-arrow-forward" size={24} color="#666" />
+                  <Ionicons name="ios-arrow-forward" size={24} color="#333333" />
                 </View>
               )}
             </TouchableOpacity>

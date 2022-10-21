@@ -16,7 +16,7 @@ export default function RestaurantCard({item}) {
 
       setPhoto(checkIfStartsWithHttps(preview));
     }
-  }, [item?.preview?.content]);
+  }, [item?.preview, item?.preview?.content]);
 
   let totalRates = item?.ratting?.content;
 
@@ -33,13 +33,13 @@ export default function RestaurantCard({item}) {
         <View style={styles.badge}>
           <FlatText
             text={item?.delivery?.content}
-            color="#333"
+            color="#333333"
             font="q_semibold"
             textalign="center"
           />
           <FlatText
             text="MIN"
-            color="#333"
+            color="#333333"
             font="q_semibold"
             textalign="center"
           />
@@ -51,7 +51,7 @@ export default function RestaurantCard({item}) {
               text={item?.name}
               size={16}
               font="q_semibold"
-              color="#333"
+              color="#333333"
             />
             <View>
               <View style={styles.productContentFlex}>
@@ -64,11 +64,13 @@ export default function RestaurantCard({item}) {
                 <FlatText
                   text={item?.avg_ratting?.content}
                   size={15}
+                  color="#333333"
                   font="q_semibold"
                 />
                 <FlatText
                   text={'(' + totalRates + ')'}
                   size={15}
+                  color="#333333"
                   font="q_regular"
                 />
               </View>

@@ -257,7 +257,7 @@ export default function Search({navigation}) {
         <View style={styles.btnArea}>
           <View style={styles.currentLocation}>
             <TouchableOpacity onPress={currentLocation}>
-              <FontAwesome name="location-arrow" size={32} color="#666" />
+              <FontAwesome name="location-arrow" size={32}color="#333" />
             </TouchableOpacity>
           </View>
           <View style={styles.btnContentArea}>

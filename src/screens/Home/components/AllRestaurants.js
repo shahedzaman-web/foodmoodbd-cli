@@ -26,13 +26,13 @@ export default function AllRestaurants({item}) {
         <View style={styles.badge}>
           <FlatText
             text={item.restaurant_info.delivery.content}
-            color="#333"
+            color="#333333"
             font="q_semibold"
             textalign="center"
           />
           <FlatText
             text="MIN"
-            color="#333"
+            color="#333333"
             font="q_semibold"
             textalign="center"
           />
@@ -43,7 +43,7 @@ export default function AllRestaurants({item}) {
               text={item.restaurant_info.name}
               size={16}
               font="q_semibold"
-              color="#333"
+              color="#333333"
             />
             <View>
               <View style={styles.productContentFlex}>

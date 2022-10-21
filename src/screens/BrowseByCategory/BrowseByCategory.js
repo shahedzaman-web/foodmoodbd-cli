@@ -19,7 +19,7 @@ export default function BrowseByCategory({ route }) {
       <View style={styles.flex}>
         <Header />
         <View style={styles.mainContainer}>
-          <ActivityIndicator size="large" color="#333" />
+          <ActivityIndicator size="large" color="#333333" />
         </View>
       </View>
     );
@@ -28,7 +28,7 @@ export default function BrowseByCategory({ route }) {
       <View style={styles.flex}>
         <Header />
         <View style={styles.mainContainer}>
-          <FlatText text={error?.data !== undefined ? error.data : t("notFound") } size={20} color="#333" font="q_bold" />
+          <FlatText text={error?.data !== undefined ? error.data : t("notFound") } size={20} color="#333333" font="q_bold" />
         </View>
       </View>
     );

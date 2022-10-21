@@ -21,7 +21,7 @@ export default function FlatText({text, font, color, size, textalign}) {
     <Text
       style={{
         fontFamily: fonts[font],
-        color: color,
+        color: color ? color : "#333",
         fontSize: size,
         textAlign: textalign,
       }}>

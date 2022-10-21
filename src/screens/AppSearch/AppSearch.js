@@ -1,9 +1,7 @@
 import {View, TouchableOpacity, FlatList} from 'react-native';
 import React from 'react';
 import styles from './styles';
-
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
 import FlatText from '../../components/FlatText';
 import {
   useSearchResultQuery,
@@ -17,7 +15,7 @@ export default function AppSearch({navigation}) {
   const [searchResult, setSearchResult] = React.useState([]);
   const [selectedSearchResult, setSelectedSearchResult] = React.useState('');
   const [searchText] = useSearchTextMutation();
-  const {data, error} = useSearchResultQuery(selectedSearchResult);
+  const {data} = useSearchResultQuery(selectedSearchResult);
 
   const handleInputSearch = React.useCallback(
     async text => {
@@ -82,7 +80,12 @@ export default function AppSearch({navigation}) {
                   key={item}
                   onPress={() => handleSearchResult(item)}
                   style={styles.searchResult}>
-                  <FlatText text={item} font="q_regular" size={18} />
+                  <FlatText
+                    text={item}
+                    font="q_regular"
+                    size={18}
+                    color="#333333"
+                  />
                 </TouchableOpacity>
               </View>
             ))}
@@ -91,7 +94,7 @@ export default function AppSearch({navigation}) {
               text={`Search Result for "${search}"`}
               font="q_bold"
               size={18}
-              color="#666"
+              color="#333333"
             />
           )}
         </View>
@@ -102,7 +105,7 @@ export default function AppSearch({navigation}) {
             text={`${data?.restuarants?.length} Results Found with "${search}"`}
             font="q_bold"
             size={18}
-            color="#666"
+            color="#333333"
           />
         )}
       </View>
@@ -121,7 +124,7 @@ export default function AppSearch({navigation}) {
               text="No Result Found"
               font="q_bold"
               size={18}
-              color="#666"
+              color="#333333"
             />
           )}
         </View>

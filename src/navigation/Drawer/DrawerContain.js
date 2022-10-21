@@ -81,9 +81,14 @@ export default function DrawerContain({navigation}) {
                       style={styles.icon}
                       name="login"
                       size={20}
-                      color="#666"
+                      color="#333333"
                     />
-                    <FlatText text={t('login')} font="q_regular" size={18} />
+                    <FlatText
+                      text={t('login')}
+                      font="q_regular"
+                      size={18}
+                      color="#333333"
+                    />
                   </View>
                 </View>
               </TouchableOpacity>
@@ -96,9 +101,14 @@ export default function DrawerContain({navigation}) {
                       style={styles.icon}
                       name="login"
                       size={20}
-                      color="#666"
+                      color="#333333"
                     />
-                    <FlatText text={t('register')} font="q_regular" size={18} />
+                    <FlatText
+                      text={t('register')}
+                      font="q_regular"
+                      size={18}
+                      color="#333333"
+                    />
                   </View>
                 </View>
               </TouchableOpacity>
@@ -119,9 +129,14 @@ export default function DrawerContain({navigation}) {
                     style={styles.icon}
                     name="home"
                     size={20}
-                    color="#666"
+                    color="#333333"
                   />
-                  <FlatText text={t('homePage')} font="q_regular" size={18} />
+                  <FlatText
+                    text={t('homePage')}
+                    font="q_regular"
+                    size={18}
+                    color="#333333"
+                  />
                 </View>
               </View>
             </TouchableOpacity>
@@ -136,9 +151,14 @@ export default function DrawerContain({navigation}) {
                     style={styles.icon}
                     name="list-unordered"
                     size={20}
-                    color="#666"
+                    color="#333333"
                   />
-                  <FlatText text={t('allOrder')} font="q_regular" size={18} />
+                  <FlatText
+                    text={t('allOrder')}
+                    font="q_regular"
+                    size={18}
+                    color="#333333"
+                  />
                 </View>
               </View>
             </TouchableOpacity>
@@ -153,9 +173,14 @@ export default function DrawerContain({navigation}) {
                     style={styles.icon}
                     name="settings"
                     size={20}
-                    color="#666"
+                    color="#333333"
                   />
-                  <FlatText text={t('settings')} font="q_regular" size={18} />
+                  <FlatText
+                    text={t('settings')}
+                    font="q_regular"
+                    size={18}
+                    color="#333333"
+                  />
                 </View>
               </View>
             </TouchableOpacity>
@@ -170,13 +195,14 @@ export default function DrawerContain({navigation}) {
                   name="cash-refund"
                   style={styles.icon}
                   size={20}
-                  color="#666"
+                  color="#333333"
                 />
 
                 <FlatText
                   text={t('refundAndReturn')}
                   font="q_regular"
                   size={18}
+                  color="#333333"
                 />
               </View>
             </View>
@@ -191,12 +217,13 @@ export default function DrawerContain({navigation}) {
                   name="privacy-tip"
                   style={styles.icon}
                   size={20}
-                  color="#666"
+                  color="#333333"
                 />
                 <FlatText
                   text={t('privacyPolicy')}
                   font="q_regular"
                   size={18}
+                  color="#333333"
                 />
               </View>
             </View>
@@ -211,12 +238,13 @@ export default function DrawerContain({navigation}) {
                   name="ios-document-text-outline"
                   style={styles.icon}
                   size={20}
-                  color="#666"
+                  color="#333333"
                 />
                 <FlatText
                   text={t('termsAndConditions')}
                   font="q_regular"
                   size={18}
+                  color="#333333"
                 />
               </View>
             </View>
@@ -231,12 +259,13 @@ export default function DrawerContain({navigation}) {
                   name="language"
                   style={styles.icon}
                   size={20}
-                  color="#666"
+                  color="#333333"
                 />
                 <FlatText
                   text={t('changeLanguage')}
                   font="q_regular"
                   size={18}
+                  color="#333333"
                 />
               </View>
             </View>
@@ -251,10 +280,15 @@ export default function DrawerContain({navigation}) {
                     name="message"
                     style={styles.icon}
                     size={20}
-                    color="#666"
+                    color="#333333"
                   />
 
-                  <FlatText text={t('helpCenter')} font="q_regular" size={18} />
+                  <FlatText
+                    text={t('helpCenter')}
+                    font="q_regular"
+                    size={18}
+                    color="#333333"
+                  />
                 </View>
               </View>
             </TouchableOpacity>
@@ -277,13 +311,14 @@ export default function DrawerContain({navigation}) {
                     name="bell"
                     style={styles.icon}
                     size={20}
-                    color="#666"
+                    color="#333333"
                   />
 
                   <FlatText
                     text={t('notification')}
                     font="q_regular"
                     size={18}
+                    color="#333333"
                   />
                 </View>
               </View>
@@ -294,7 +329,7 @@ export default function DrawerContain({navigation}) {
           <View style={styles.singleList}>
             <TouchableOpacity onPress={logout}>
               {isLoading ? (
-                <ActivityIndicator size="small" color="#666" />
+                <ActivityIndicator size="small" color="#333333" />
               ) : (
                 <View style={styles.flexDirection}>
                   <View style={styles.flexContain}>
@@ -302,9 +337,14 @@ export default function DrawerContain({navigation}) {
                       style={styles.icon}
                       name="logout"
                       size={20}
-                      color="#666"
+                      color="#333333"
                     />
-                    <FlatText text={t('logout')} font="q_regular" size={18} />
+                    <FlatText
+                      text={t('logout')}
+                      font="q_regular"
+                      size={18}
+                      color="#333333"
+                    />
                   </View>
                 </View>
               )}

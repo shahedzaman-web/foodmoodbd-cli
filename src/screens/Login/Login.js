@@ -6,16 +6,13 @@ import {useSignInUserMutation} from '../../store/services/authApi';
 import Toast from 'react-native-toast-message';
 import styles from './styles';
 import GoogleLogin from './GoogleLogin';
-// import FacebookLogin from './FacebookLogin';
 import {useTranslation} from 'react-i18next';
 
-// import * as Notifications from "expo-notifications";
 import {useDispatch} from 'react-redux';
 import {provider} from '../../store/slices/authSlice';
 import requestUserPermission from '../../utils/notificationService';
 import FacebookLogin from './FacebookLogin';
 
-// });
 export default function Login({navigation}) {
   const {t} = useTranslation();
   const [email, setEmail] = React.useState('');
@@ -23,67 +20,7 @@ export default function Login({navigation}) {
   const [signInUser, {isLoading}] = useSignInUserMutation();
   const [expoPushToken, setExpoPushToken] = React.useState('');
   const dispatch = useDispatch();
-  // const [notification, setNotification] = React.useState(false);
-  // const notificationListener = React.useRef();
-  // const responseListener = React.useRef();
-
-  // async function registerForPushNotificationsAsync() {
-  //   try {
-  //     let token;
-  //     if (Device.isDevice) {
-  //       const {status: existingStatus} =
-  //         await Notifications.getPermissionsAsync();
-  //       let finalStatus = existingStatus;
-  //       if (existingStatus !== 'granted') {
-  //         const {status} = await Notifications.requestPermissionsAsync();
-  //         finalStatus = status;
-  //       }
-  //       if (finalStatus !== 'granted') {
-  //         alert('Failed to get push token for push notification!');
-  //         return;
-  //       }
-  //       token = (await Notifications.getExpoPushTokenAsync()).data;
-  //       // console.log("Expo Token==========================>", token);
-  //     } else {
-  //       alert('Must use physical device for Push Notifications');
-  //     }
-
-  //     if (Platform.OS === 'android') {
-  //       Notifications.setNotificationChannelAsync('default', {
-  //         name: 'default',
-  //         importance: Notifications.AndroidImportance.MAX,
-  //         vibrationPattern: [0, 250, 250, 250],
-  //         lightColor: '#FF231F7C',
-  //       });
-  //     }
-
-  //     return token;
-  //   } catch (e) {
-  //     alert(JSON.stringify(e));
-  //     console.log('notification error==============>', e.message);
-  //   }
-  // }
-
-  // React.useEffect(() => {
-  //   registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
-
-  //   notificationListener.current =
-  //     Notifications.addNotificationReceivedListener(notification => {
-  //       setNotification(notification);
-  //     });
-
-  //   responseListener.current =
-  //     Notifications.addNotificationResponseReceivedListener(response => {
-  //       console.log(response);
-  //     });
-
-  //   return () => {
-  //     Notifications.removeNotificationSubscription(
-  //       notificationListener.current,
-  //     );
-  //     Notifications.removeNotificationSubscription(responseListener.current);
-  //   };
-  // }, []);
+  console.log({expoPushToken});
   React.useEffect(() => {
     const getDeviceId = async () => {
       const res = await requestUserPermission();
@@ -190,7 +127,7 @@ export default function Login({navigation}) {
                 text={t('donHaveAccount')}
                 font="q_regular"
                 size={16}
-                color="#666"
+                color="#333333"
               />
             </TouchableOpacity>
           </View>

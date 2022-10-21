@@ -37,20 +37,20 @@ export default function Info({route, navigation}) {
         </View>
       </ImageBackground>
       <View style={styles.infoTitle}>
-        <FlatText text={name} size={17} font="q_semibold" color="#333" />
+        <FlatText text={name} size={17} font="q_semibold" color="#333333" />
         <View style={styles.infoFlex}>
           <Entypo
             style={styles.marginRight5}
             name="star"
             size={17}
-            color="#333"
+            color="#333333"
           />
-          <FlatText text={avg} font="q_semibold" size={17} color="#333" />
+          <FlatText text={avg} font="q_semibold" size={17} color="#333333" />
           <FlatText
             text={'(' + reviews.length + ')'}
             font="q_semibold"
             size={17}
-            color="#333"
+            color="#333333"
           />
         </View>
       </View>
@@ -64,7 +64,7 @@ export default function Info({route, navigation}) {
               style={styles.locationIcon}
               name="location"
               size={24}
-              color="#333"
+              color="#333333"
             />
             <FlatText
               text={about.full_address}
@@ -78,7 +78,7 @@ export default function Info({route, navigation}) {
               style={styles.locationIcon}
               name="envelope"
               size={24}
-              color="#333"
+              color="#333333"
             />
             <FlatText
               text={' ' + about.email1}
@@ -92,7 +92,7 @@ export default function Info({route, navigation}) {
               style={styles.locationIcon}
               name="envelope"
               size={24}
-              color="#333"
+              color="#333333"
             />
             <FlatText
               text={' ' + about.email2}
@@ -105,7 +105,7 @@ export default function Info({route, navigation}) {
             <AntDesign
               name="phone"
               size={20}
-              color="#333"
+              color="#333333"
               style={styles.locationIcon}
             />
             <FlatText
@@ -119,7 +119,7 @@ export default function Info({route, navigation}) {
             <AntDesign
               name="phone"
               size={20}
-              color="#333"
+              color="#333333"
               style={styles.locationIcon}
             />
             <FlatText

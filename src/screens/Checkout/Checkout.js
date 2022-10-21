@@ -149,6 +149,11 @@ export default function Checkout({navigation}) {
           text1: 'Please enter all the fields',
           type: 'error',
         });
+      } else if (phone.length !== 11) {
+        Toast.show({
+          text1: 'Please enter 11 digits',
+          type: 'error',
+        });
       } else {
         const sendData = {
           vendor_id: restaurantId,
@@ -212,7 +217,7 @@ export default function Checkout({navigation}) {
                 'cancel_url',
                 config.spayBaseUrl + '/response/cancel',
               );
-              formdata.append('store_id', response.data.store_id);
+              formdata.append('store_id', response2.data.store_id);
               formdata.append('amount', amount.toString());
               formdata.append('order_id', orderId.toString());
               formdata.append('currency', 'BDT');
@@ -308,7 +313,7 @@ export default function Checkout({navigation}) {
                       <FlatText
                         text={item.quantity + ' * ' + item.title}
                         font="q_semibold"
-                        color="#333"
+                        color="#333333"
                         size={16}
                       />
                     </View>
@@ -320,7 +325,7 @@ export default function Checkout({navigation}) {
                           item.price * item.quantity
                         }
                         font="q_semibold"
-                        color="#333"
+                        color="#333333"
                         size={16}
                       />
                     </View>
@@ -334,7 +339,7 @@ export default function Checkout({navigation}) {
                   <FlatText
                     text={t('total')}
                     font="q_semibold"
-                    color="#333"
+                    color="#333333"
                     size={16}
                   />
                 </View>
@@ -342,7 +347,7 @@ export default function Checkout({navigation}) {
                   <FlatText
                     text={config.CURRENCY_CODE + ' ' + total}
                     font="q_semibold"
-                    color="#333"
+                    color="#333333"
                     size={16}
                   />
                 </View>
@@ -354,7 +359,7 @@ export default function Checkout({navigation}) {
                       <FlatText
                         text={t('discount')}
                         font="q_semibold"
-                        color="#333"
+                        color="#333333"
                         size={16}
                       />
                     </View>
@@ -362,7 +367,7 @@ export default function Checkout({navigation}) {
                       <FlatText
                         text={config.CURRENCY_CODE + ' ' + couponDiscount}
                         font="q_semibold"
-                        color="#333"
+                        color="#333333"
                         size={16}
                       />
                     </View>
@@ -374,7 +379,7 @@ export default function Checkout({navigation}) {
                   <FlatText
                     text={t('subTotal')}
                     font="q_semibold"
-                    color="#333"
+                    color="#333333"
                     size={16}
                   />
                 </View>
@@ -386,7 +391,7 @@ export default function Checkout({navigation}) {
                       parseFloat(total - couponDiscount)
                     }
                     font="q_semibold"
-                    color="#333"
+                    color="#333333"
                     size={16}
                   />
                 </View>
@@ -396,7 +401,7 @@ export default function Checkout({navigation}) {
                   <FlatText
                     text={t('deliveryFee')}
                     font="q_semibold"
-                    color="#333"
+                    color="#333333"
                     size={16}
                   />
                 </View>
@@ -404,7 +409,7 @@ export default function Checkout({navigation}) {
                   <FlatText
                     text={config.CURRENCY_CODE + ' ' + deliveryFee}
                     font="q_semibold"
-                    color="#333"
+                    color="#333333"
                     size={16}
                   />
                 </View>
@@ -416,7 +421,7 @@ export default function Checkout({navigation}) {
                       t('tax') + ` (${parseInt(taxPercentage?.data?.tax)}%)`
                     }
                     font="q_semibold"
-                    color="#333"
+                    color="#333333"
                     size={16}
                   />
                 </View>
@@ -428,7 +433,7 @@ export default function Checkout({navigation}) {
                       total * taxPercentage?.data?.tax * 0.01
                     }
                     font="q_semibold"
-                    color="#333"
+                    color="#333333"
                     size={16}
                   />
                 </View>
@@ -438,7 +443,7 @@ export default function Checkout({navigation}) {
                   <FlatText
                     text={t('total') + '(Incl. VAT)'}
                     font="q_bold"
-                    color="#333"
+                    color="#333333"
                     size={17}
                   />
                 </View>
@@ -455,7 +460,7 @@ export default function Checkout({navigation}) {
                       )
                     }
                     font="q_bold"
-                    color="#333"
+                    color="#333333"
                     size={17}
                   />
                 </View>
@@ -521,7 +526,7 @@ export default function Checkout({navigation}) {
                   text={t('name')}
                   font="q_regular"
                   size={16}
-                  color="#333"
+                  color="#333333"
                 />
                 <TextInput
                   value={name}
@@ -536,14 +541,14 @@ export default function Checkout({navigation}) {
                   text={t('phone')}
                   font="q_regular"
                   size={16}
-                  color="#333"
+                  color="#333333"
                 />
                 <View>
                   <TextInput
                     value={phone}
                     style={styles.inputText}
                     keyboardType={'phone-pad'}
-                    placeholder={t('phone')}
+                    placeholder={t('phonePlaceholder')}
                     placeholderTextColor="#333"
                     onChangeText={text => setPhone(text)}
                   />
@@ -554,7 +559,7 @@ export default function Checkout({navigation}) {
                   text={t('address')}
                   font="q_regular"
                   size={16}
-                  color="#333"
+                  color="#333333"
                 />
                 <TextInput
                   multiline={true}
@@ -611,7 +616,7 @@ export default function Checkout({navigation}) {
                       <FlatText
                         text={t('agree') + ' '}
                         font="q_semibold"
-                        color="#333"
+                        color="#333333"
                         size={16}
                       />
                       <Pressable
@@ -631,7 +636,7 @@ export default function Checkout({navigation}) {
                       <FlatText
                         text={', '}
                         font="q_semibold"
-                        color="#333"
+                        color="#333333"
                         size={16}
                       />
                     </View>
@@ -651,7 +656,7 @@ export default function Checkout({navigation}) {
                       <FlatText
                         text={' ' + t('and') + ' '}
                         font="q_semibold"
-                        color="#333"
+                        color="#333333"
                         size={16}
                       />
                       <Pressable

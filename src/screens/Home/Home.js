@@ -28,12 +28,12 @@ export default function Home() {
 
   const LoadMore = () => {};
 
-  if (isFetching) {
+  if (isFetching || getAreaId?.isFetching) {
     return (
       <View style={styles.flex}>
         <Header />
         <View style={styles.mainContainer}>
-          <ActivityIndicator size="large" color="#333" />
+          <ActivityIndicator size="large" color="#333333" />
         </View>
       </View>
     );

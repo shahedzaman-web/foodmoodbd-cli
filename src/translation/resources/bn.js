@@ -29,6 +29,7 @@ export default {
   deliveryDetails: "ডিলিভারি বিবরণ",
   name: "নাম",
   phone: "ফোন",
+  phonePlaceholder:"অনুগ্রহ করে 11 সংখ্যার ফোন নম্বর লিখুন",
   address: "ঠিকানা",
   placeOrder: "অর্ডার করুন",
   agree:"আমি ",

@@ -52,7 +52,7 @@ export default function GoogleLogin({expoPushToken}) {
         alert('Something went Wrong. Try Again.');
       }
     } catch (error) {
-      alert(error);
+      alert(error.message);
       console.log({error});
     }
   };

@@ -314,7 +314,7 @@ export default function Details({navigation, route}) {
                       <FlatText
                         font="q_semibold"
                         size={18}
-                        color="#333"
+                        color="#333333"
                         text={
                           config.CURRENCY_CODE +
                           ' ' +
@@ -330,7 +330,7 @@ export default function Details({navigation, route}) {
                             <FlatText
                               font="q_semibold"
                               size={18}
-                              color="#333"
+                              color="#333333"
                               text={
                                 t('addOnes') + ' ' + `${selectedItem.title}`
                               }
@@ -338,7 +338,7 @@ export default function Details({navigation, route}) {
                             <FlatText
                               font="q_regular"
                               size={16}
-                              color="#333"
+                              color="#333333"
                               text={t('select')}
                             />
                           </View>
@@ -381,7 +381,7 @@ export default function Details({navigation, route}) {
                                   }
                                   font="q_semibold"
                                   size={15}
-                                  color="#666"
+                                 color="#333333"
                                 />
                               </View>
                             </View>
@@ -393,13 +393,13 @@ export default function Details({navigation, route}) {
                     <FlatText
                       font="q_semibold"
                       size={18}
-                      color="#333"
+                      color="#333333"
                       text={t('specialInstructions')}
                     />
                     <FlatText
                       font="q_regular"
                       size={14}
-                      color="#333"
+                      color="#333333"
                       text={t('instructionsDetails')}
                     />
                     <TextInput
@@ -428,7 +428,7 @@ export default function Details({navigation, route}) {
                           text={' ' + productQuantity + ' '}
                           font="q_semibold"
                           size={19}
-                          color="#666"
+                         color="#333333"
                         />
                       }
                       <TouchableOpacity

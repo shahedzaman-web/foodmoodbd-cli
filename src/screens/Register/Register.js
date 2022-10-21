@@ -136,7 +136,7 @@ export default function Register({navigation}) {
                   text={t('alreadyHaveAccount')}
                   font="q_regular"
                   size={16}
-                  color="#666"
+                 color="#333333"
                 />
               </TouchableOpacity>
             </View>

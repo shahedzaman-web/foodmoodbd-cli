@@ -36,7 +36,7 @@ export const api = createApi({
       query: areaId => {
         return {
           url: `/home/${areaId}`,
-          //  url: `/home/1`,
+            // url: `/home/1`,
           method: 'Get',
           validateStatus: (response, result) =>
             response.status === 200 && !result.isError, // Our tricky API always returns a 200, but sets an `isError` property when there is an error.

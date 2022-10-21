@@ -117,7 +117,7 @@ export default function Header() {
         return;
       }
 
-         Geolocation.getCurrentPosition(
+      Geolocation.getCurrentPosition(
         pos => {
           setPosition(pos);
         },
@@ -193,12 +193,12 @@ export default function Header() {
           getCurrentPosition();
         }
       } catch (e) {
-        alert(JSON.stringify(e));
+        alert(JSON.stringify(e?.message));
         console.log('e=====================>', e);
       }
     };
     getLocation();
-  }, [dispatch, isLocationAvailable, position]);
+  }, [dispatch, getCurrentPosition, isLocationAvailable, position]);
 
   return (
     <View style={styles.headerContainer}>

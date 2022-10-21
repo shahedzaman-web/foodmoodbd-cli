@@ -29,6 +29,7 @@ export default {
   deliveryDetails: "Delivery Details",
   name: "Name",
   phone: "Phone",
+  phonePlaceholder: "Please Enter 11 digit Phone Number",
   address: "Address",
   placeOrder: "Place Order",
   agree: "I agree with the ",

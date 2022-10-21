@@ -31,15 +31,17 @@ export default function SearchFoodItem({item}) {
           <View style={styles.badge}>
             <FlatText
               text={item.time}
-              color="#333"
+            
               font="q_semibold"
               textalign="center"
+              color="#333333"
             />
             <FlatText
               text="MIN"
-              color="#333"
+              color="#333333"
               font="q_semibold"
               textalign="center"
+              color="#333333"
             />
           </View>
           <View>
@@ -48,7 +50,7 @@ export default function SearchFoodItem({item}) {
                 text={item.name}
                 size={16}
                 font="q_semibold"
-                color="#333"
+                color="#333333"
               />
               <View>
                 <View style={styles.productContentFlex}>
@@ -62,6 +64,7 @@ export default function SearchFoodItem({item}) {
                     text={item.avg_ratting}
                     size={15}
                     font="q_semibold"
+                    color="#333333"
                   />
                 </View>
               </View>
