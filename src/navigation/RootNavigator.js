@@ -53,7 +53,7 @@ const navTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: 'transparent',
+    background: '#FFFFFF',
   },
 };
 const HomeTabScreen = () => {

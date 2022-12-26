@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
         paddingVertical: 20,
         borderRadius: 5,
         paddingHorizontal: 20,
-        marginTop: 10
+        marginTop: 10,
+        color: '#333',
     },
     formGroup: {
         marginBottom: 20

@@ -1,4 +1,5 @@
 import {StatusBar, StyleSheet} from 'react-native';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
 const styles = StyleSheet.create({
   container: {
@@ -24,8 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#C01C27',
   },
   cardContainer: {
-    flex: 1,
-    width: '95%',
+    width: wp('95%'),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -34,18 +34,26 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 10,
     elevation: 10,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
   },
-  cardImg: {width: '100%', height: 200, resizeMode: 'contain', marginTop: 12},
+  cardImg: {
+    width: wp('90%'),
+    height: 280,
+    resizeMode: 'cover',
+    marginTop: 12,
+    borderRadius: 10,
+    backgroundColor: '#fff',
+  },
   dFlex: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    width: '98%',
+  },
+  textContainer: {
+    width: wp('85%'),
+  },
+  headerTitle: {
+    width: wp('85%'),
   },
 });
 export default styles;

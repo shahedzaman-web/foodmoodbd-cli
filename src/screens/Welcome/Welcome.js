@@ -59,6 +59,7 @@ export default function Welcome({navigation}) {
   };
 
   const hasLocationPermission = async () => {
+    
     try {
       if (Platform.OS === 'ios') {
         const hasPermission = await hasPermissionIOS();
@@ -104,6 +105,7 @@ export default function Welcome({navigation}) {
   };
 
   const getCurrentPosition = React.useCallback(async () => {
+
     const hasPermission = await hasLocationPermission();
 
     if (!hasPermission) {
@@ -208,7 +210,7 @@ export default function Welcome({navigation}) {
           )}
         </TouchableOpacity>
       </View>
-      <View style={styles.selectButton}></View>
+      <View style={styles.selectButton} />
     </View>
   );
 }

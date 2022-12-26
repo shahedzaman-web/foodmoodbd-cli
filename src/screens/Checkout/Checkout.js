@@ -7,7 +7,7 @@ import {
   Image,
   Pressable,
 } from 'react-native';
-import {ActivityIndicator, Checkbox} from 'react-native-paper';
+import {ActivityIndicator} from 'react-native-paper';
 import styles from './styles';
 import config from '../../utils/config';
 import Header from '../sectionComponent/Header';
@@ -22,13 +22,14 @@ import {
 import Toast from 'react-native-toast-message';
 import {removeAllItemFromCart} from '../../store/slices/cartSlice';
 import {useTranslation} from 'react-i18next';
-import {RadioButton} from 'react-native-paper';
+// import {RadioButton} from 'react-native-paper';
 import axios from 'axios';
 import cartTotalAmount from '../../utils/cartTotalAmount';
 import publicIP from 'react-native-public-ip';
 import DistanceMap from './components/DistanceMap';
 import FlatTextUnderLine from '../../components/FlatTextUnderLine';
-
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
+import {RadioButton} from 'react-native-radio-buttons-group';
 export default function Checkout({navigation}) {
   const {t} = useTranslation();
   const userInfo = useSelector(state => state.userInfo);
@@ -57,6 +58,8 @@ export default function Checkout({navigation}) {
   const [coordinates, setCoordinates] = React.useState([]);
 
   const [termsAndCondition, setTermsAndCondition] = React.useState(false);
+
+  console.log({checked});
   React.useEffect(() => {
     publicIP()
       .then(ip => {
@@ -98,14 +101,7 @@ export default function Checkout({navigation}) {
     } else {
       console.log('error======================');
     }
-  }, [
-    getDeliveryFee,
-    latitude,
-    longitude,
-    restaurantLocation,
-    calculateDistance,
-    coordinates,
-  ]);
+  }, [getDeliveryFee, calculateDistance]);
 
   const handleApplyCoupon = React.useCallback(async () => {
     if (couponCode === '') {
@@ -575,8 +571,9 @@ export default function Checkout({navigation}) {
                 <View style={styles.dFlex}>
                   <RadioButton
                     color="#ff3252"
+                    id="cod"
                     value="cod"
-                    status={checked === 'cod' ? 'checked' : 'unchecked'}
+                    selected={checked === 'cod'}
                     onPress={() => setChecked('cod')}
                   />
                   <Image
@@ -587,8 +584,9 @@ export default function Checkout({navigation}) {
                 <View style={styles.dFlex}>
                   <RadioButton
                     value="shurjoPay"
+                    id="shurjoPay"
                     color="#ff3252"
-                    status={checked === 'shurjoPay' ? 'checked' : 'unchecked'}
+                    selected={checked === 'shurjoPay'}
                     onPress={() => setChecked('shurjoPay')}
                   />
                   <Image
@@ -599,8 +597,12 @@ export default function Checkout({navigation}) {
               </View>
               <View>
                 <View style={styles.terms}>
-                  <Checkbox
-                    color="#ff3252"
+                  <BouncyCheckbox
+                    size={25}
+                    fillColor="#ff3252"
+                    unfillColor="#FFFFFF"
+                    iconStyle={{borderColor: 'red'}}
+                    innerIconStyle={{borderWidth: 2}}
                     status={termsAndCondition ? 'checked' : 'unchecked'}
                     onPress={() => {
                       setTermsAndCondition(!termsAndCondition);

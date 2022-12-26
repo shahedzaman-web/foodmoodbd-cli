@@ -21,7 +21,7 @@ export default function Home() {
 
   const {data, isFetching, refetch, error} =
     useGetRestaurantsByAreaIdQuery(areaId);
-
+    console.log({error})
   const onRefresh = () => {
     refetch();
   };

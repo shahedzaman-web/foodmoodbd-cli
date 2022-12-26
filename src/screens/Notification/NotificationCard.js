@@ -58,22 +58,26 @@ export default function NotificationCard({item}) {
     <View style={styles.cardContainer}>
       <View>
         <View style={styles.dFlex}>
-          <HeadText
-            text={item.notification.title}
-            font="q_bold"
-            size={18}
-            color="#C01C27"
-          />
+          <View style={styles.headerTitle}>
+            <HeadText
+              text={item.notification.title}
+              font="q_bold"
+              size={18}
+              color="#C01C27"
+            />
+          </View>
           <TouchableOpacity onPress={handleDeleteNotification}>
             <MaterialIcons name="delete" size={24} color="#C01C27" />
           </TouchableOpacity>
         </View>
-        <FlatText
-          text={bodyWithoutHtml2}
-          font="q_bold"
-          size={16}
-          color="#333333"
-        />
+        <View style={styles.textContainer}>
+          <FlatText
+            text={bodyWithoutHtml2}
+            font="q_bold"
+            size={16}
+            color="#333333"
+          />
+        </View>
         {image !== null && (
           <Image source={{uri: image}} style={styles.cardImg} />
         )}

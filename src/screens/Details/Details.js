@@ -381,7 +381,7 @@ export default function Details({navigation, route}) {
                                   }
                                   font="q_semibold"
                                   size={15}
-                                 color="#333333"
+                                  color="#333333"
                                 />
                               </View>
                             </View>
@@ -428,7 +428,7 @@ export default function Details({navigation, route}) {
                           text={' ' + productQuantity + ' '}
                           font="q_semibold"
                           size={19}
-                         color="#333333"
+                          color="#333333"
                         />
                       }
                       <TouchableOpacity

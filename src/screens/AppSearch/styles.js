@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   input: {
-    backgroundColor: "#F9F9F9",
+    color: '#333',
     width: res.wp("82%"),
     height: 40,
     marginLeft: 12,

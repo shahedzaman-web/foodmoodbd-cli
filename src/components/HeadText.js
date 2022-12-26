@@ -1,8 +1,7 @@
-import React from "react";
-import { Text } from "react-native";
+import React from 'react';
+import {Text} from 'react-native';
 
-
-export default function HeadText({ text, font, color, size, textalign, }) {
+export default function HeadText({text, font, color, size, textalign}) {
   let fonts = {
     medium: 'Raleway-Medium',
     bold: 'Raleway-Bold',
@@ -18,19 +17,17 @@ export default function HeadText({ text, font, color, size, textalign, }) {
     q_semibold: 'Quicksand-SemiBold',
   };
 
-    return (
-      <Text
-        style={{
-          fontFamily: fonts[font],
-          color: color,
-          fontSize: size,
-          textAlign: textalign,
-          width: 300,
-        }}
-        numberOfLines={1}
-      >
-        {text}
-      </Text>
-    );
-  }
-
+  return (
+    <Text
+      style={{
+        fontFamily: fonts[font],
+        color: color,
+        fontSize: size,
+        textAlign: textalign,
+        width: 300,
+      }}
+      numberOfLines={2}>
+      {text}
+    </Text>
+  );
+}

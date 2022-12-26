@@ -4,7 +4,6 @@ import styles from '../styles';
 import {useNavigation} from '@react-navigation/native';
 import checkIfStartsWithHttps from '../../../utils/checkIfStartsWithHttps';
 import FlatText from '../../../components/FlatText';
-import config from '../../../utils/config';
 
 export default function RestaurantsWithOffer({item}) {
   const [photo, setPhoto] = React.useState('');
@@ -24,7 +23,7 @@ export default function RestaurantsWithOffer({item}) {
         <Image
           style={styles.renderItemImg}
           source={{
-            uri: item.offerables.restaurants.preview.content,
+            uri: photo,
           }}
         />
         <View style={styles.renderItemBadge}>

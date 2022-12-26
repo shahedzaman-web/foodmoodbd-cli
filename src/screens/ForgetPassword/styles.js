@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 20,
     marginTop: 16,
+     color: '#333',
   },
   btn: {
     alignItems: "center",
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginHorizontal: 5,
     textAlign: "center",
+    color: '#333',
   },
   btnContainer: {
     marginTop: 30,

@@ -26,6 +26,11 @@ export default function Register({navigation}) {
         text1: 'Password and confirm password does not match',
         type: 'error',
       });
+    } else if (password.length < 6 || confirmPass.length < 6) {
+      Toast.show({
+        text1: 'Password Should be at least 6 character.',
+        type: 'error',
+      });
     } else {
       try {
         const payload = {
@@ -34,20 +39,23 @@ export default function Register({navigation}) {
           password,
           phone_number: phoneNumber,
         };
-        const {data} = await register(payload);
-
-        if (data.status === 'success') {
+        const data = await register(payload);
+        if (data?.status === 'success') {
           navigation.navigate('OtpScreen', {
             phoneNumber: phoneNumber,
           });
         } else {
           Toast.show({
-            text1: data.error,
+            text1: 'Something went wrong please try again!',
             type: 'error',
           });
         }
       } catch (err) {
-        console.log(err);
+        console.log({err});
+        Toast.show({
+          text1: 'Something went wrong please try again!',
+          type: 'error',
+        });
       }
     }
   };
@@ -63,6 +71,7 @@ export default function Register({navigation}) {
             <View style={styles.formGroup}>
               <FlatText text={t('name')} font="q_regular" size={17} />
               <TextInput
+                placeholderTextColor="#666"
                 style={styles.textInput}
                 value={name}
                 placeholder={t('enterName')}
@@ -73,6 +82,7 @@ export default function Register({navigation}) {
             <View style={styles.formGroup}>
               <FlatText text={t('email')} font="q_regular" size={17} />
               <TextInput
+                placeholderTextColor="#666"
                 style={styles.textInput}
                 value={email}
                 placeholder={t('enterEmail')}
@@ -85,6 +95,7 @@ export default function Register({navigation}) {
             <View style={styles.formGroup}>
               <FlatText text={t('phone')} font="q_regular" size={17} />
               <TextInput
+                placeholderTextColor="#666"
                 style={styles.textInput}
                 value={phoneNumber}
                 keyboardType="numeric"
@@ -95,6 +106,7 @@ export default function Register({navigation}) {
             <View style={styles.formGroup}>
               <FlatText text={t('password')} font="q_regular" size={17} />
               <TextInput
+                placeholderTextColor="#666"
                 style={styles.textInput}
                 value={password}
                 placeholder={t('enterPassword')}
@@ -109,6 +121,7 @@ export default function Register({navigation}) {
                 size={17}
               />
               <TextInput
+                placeholderTextColor="#666"
                 style={styles.textInput}
                 value={confirmPass}
                 placeholder={t('enterConfirmPassword')}
@@ -136,7 +149,7 @@ export default function Register({navigation}) {
                   text={t('alreadyHaveAccount')}
                   font="q_regular"
                   size={16}
-                 color="#333333"
+                  color="#333333"
                 />
               </TouchableOpacity>
             </View>

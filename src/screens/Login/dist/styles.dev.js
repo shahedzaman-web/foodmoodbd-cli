@@ -24,7 +24,8 @@ var styles = _reactNative.StyleSheet.create({
     borderColor: "#ddd",
     padding: 20,
     borderRadius: 5,
-    marginTop: 10
+    marginTop: 10,
+    color: '#333',
   },
   formGroup: {
     marginBottom: 20
